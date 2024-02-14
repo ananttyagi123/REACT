@@ -3,3 +3,6 @@ const div = React.createElement('div',{className:"text"},{child1},"hello world r
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 root.render(div);
 
+
+
+
