@@ -2,7 +2,7 @@ import react, { useState } from 'react'
 import './App.css'
 import Component from './Component.jsx';
 import { Button } from './Button.jsx';
-
+import { KeyButton } from './assets/Events in js/KeyEvents.jsx';
 
 
 
@@ -22,9 +22,17 @@ function App() {
     console.log(setData);
   }
 
+  // const KeyButton = () => {
+  ///  const ketEvent = document.getElementById('eventInfo');
+  //   ketEvent.addEventListener('keydown', { displayEventInformation })
+  // }
+
   return (
-    <> {data.map((item, index) => <h1 key={index}>{data[0].text}</h1>)}
+
+    <>
+      {data.map((item, index) => <h1 key={index}>{data[0].text}</h1>)}
       <Button prop={addData} />
+    //  <KeyButton />
 
     </>
   )
