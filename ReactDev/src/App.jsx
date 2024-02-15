@@ -2,7 +2,7 @@ import react, { useState } from 'react'
 import './App.css'
 import Component from './Component.jsx';
 import { Button } from './Button.jsx';
-import { KeyButton } from './assets/Events in js/KeyEvents.jsx';
+import UseState from './assets/Hooks/UseState.jsx';
 
 
 
@@ -32,8 +32,7 @@ function App() {
     <>
       {data.map((item, index) => <h1 key={index}>{data[0].text}</h1>)}
       <Button prop={addData} />
-    //  <KeyButton />
-
+      <UseState></UseState>
     </>
   )
 }
