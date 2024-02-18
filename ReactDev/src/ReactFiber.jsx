@@ -4,7 +4,7 @@
 // the algorithm react 
 
 // whenever the app render the react forms a tree like structure of your complete DOM
-// whenever you Chaange the State from your component it recreate the New React DOM tree
+// whenever you Change the State from your component it recreate the New React DOM tree
 // both previous and new re-render DOM tree
 // They both tree are Virtual Tree 
 // re-concilation algorithm diff one tree with the anathor to check which part need to be changed
@@ -29,4 +29,5 @@
 
 // ----------virtual Satck frame ------------------
 // re-implimentation of Call Stack
+
 
