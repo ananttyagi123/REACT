@@ -1,6 +1,9 @@
 
-import { useState,React } from 'react';
-import {lazy, Suspense} from 'react';
+import { useState, React } from 'react';
+import { lazy, Suspense } from 'react';
+import ThemeContext from './assets/ReactAPI/ContextAPI.jsx';
+import Navbar from './Navbar.jsx';
+import { createPortal } from 'react-dom';
 // import Text from './assets/ReactAPI/Toogle.jsx';
 
 // creating a state for toggle 
@@ -11,7 +14,7 @@ import {lazy, Suspense} from 'react';
 // LAZY API it will Create a condition that it will not SAve the Text before it is not Callled at it initial state it reduce the load
 
 // importing the comoponent  with lazy
-const Text = lazy(()=>
+const Text = lazy(() =>
   import('../src/assets/ReactAPI/Toogle.jsx'));
 const App = () => {
   const [show, setShow] = useState(false);
@@ -20,11 +23,14 @@ const App = () => {
     setShow((prev) => !prev);
   }
   return (<>
+    <ThemeContext.Provider>
+      <Navbar></Navbar>
+    </ThemeContext.Provider>
     <button onClick={handleToogle} className='border-solid rounded-lg p-2 bg-blue-400'>Click to Toogle</button>
-   {show && (<Suspense fallback={<div>I am Loading!</div>}>
-     <Text></Text>
+    {show && (<Suspense fallback={<div>I am Loading!</div>}>
+      <Text></Text>
     </Suspense>)
-} 
+    }
   </>);
 
 }
