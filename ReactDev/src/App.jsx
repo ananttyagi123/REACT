@@ -1,52 +1,31 @@
 
-import './App.css'
-import Component from './Component.jsx';
-import { Button } from './Button.jsx';
-import { react, useState, useEffect } from 'react';
+import { useState,React } from 'react';
+import {lazy, Suspense} from 'react';
+// import Text from './assets/ReactAPI/Toogle.jsx';
 
+// creating a state for toggle 
+// if false then not show 
+// if state is true then show
+// conditional rendering 
 
+// LAZY API it will Create a condition that it will not SAve the Text before it is not Callled at it initial state it reduce the load
 
-
-function App() {
-  // States 
-  // const [data, setData] = useState(
-  //   // data at initial state 
-  //   [
-  //     { "id": "a", "text": "text1" },
-  //     { "id": "b", "text": "text2" },
-  //     { "id": "c", "text": "text3" },
-  //   ]
-  // );
-  // // create a function to change the State or update the Data
-  // const addData = () => {
-  //   setData([...data, { "id": "1", "text": "text2" }])
-  //   console.log(setData);
-  // }
-
-  // const KeyButton = () => {
-  ///  const ketEvent = document.getElementById('eventInfo');
-  //   ketEvent.addEventListener('keydown', { displayEventInformation })
-  // }
-  const UseEffect = () => {
-    const [data, setData] = useState(0);
-    useEffect(() => {
-      console.log('use effect render');
-    })
-   
+// importing the comoponent  with lazy
+const Text = lazy(()=>
+  import('../src/assets/ReactAPI/Toogle.jsx'));
+const App = () => {
+  const [show, setShow] = useState(false);
+  var handleToogle = () => {
+    console.log('button Clicked!!')
+    setShow((prev) => !prev);
   }
-  return (
+  return (<>
+    <button onClick={handleToogle} className='border-solid rounded-lg p-2 bg-blue-400'>Click to Toogle</button>
+   {show && (<Suspense fallback={<div>I am Loading!</div>}>
+     <Text></Text>
+    </Suspense>)
+} 
+  </>);
 
-    <>
-      
-      <UseEffect></UseEffect>
-      {data}
-      <button onClick={
-      setData((prevData) =>
-        prevData + 1)
-    }>Update</button>
-
-    </>
-  )
 }
-
 export default App;

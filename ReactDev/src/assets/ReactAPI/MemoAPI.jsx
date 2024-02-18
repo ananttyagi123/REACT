@@ -1,0 +1,1 @@
+// Memo lets you skip re-rendering  

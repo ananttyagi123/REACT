@@ -1,0 +1,15 @@
+.card {
+  width: 300px;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 5px 10px 8px #000000b5;
+  background-color:rgb(249, 133, 208);
+}
+.card h2 {
+  margin-top: 0;
+}
+.card p {
+  margin-bottom: 0;
+}
